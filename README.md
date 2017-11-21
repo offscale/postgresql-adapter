@@ -24,10 +24,10 @@ $ npm install waterline-postgresql --save
 
 ## Configuration
 
-#### `config/connections.js`
+#### `config/datastores.js`
 
 ```js
-module.exports.connections = {
+module.exports.datastores = {
   // ...
   postgresdb: {
     /**

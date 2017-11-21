@@ -10,6 +10,7 @@ module.exports = {
         associationFinders: false,
 
         attributes: {
+            id: { type: 'number', autoIncrement: true},
             list: {
                 type: 'array'
             },
@@ -21,7 +22,8 @@ module.exports = {
                 type: 'array',
                 defaultsTo: []
             }
-        }
+        },
+        primaryKey: 'id'
     }),
 
     JsonModel: Waterline.Collection.extend({
@@ -31,6 +33,7 @@ module.exports = {
         associationFinders: false,
 
         attributes: {
+            id: { type: 'number', autoIncrement: true},
             json: {
                 type: 'json'
             },

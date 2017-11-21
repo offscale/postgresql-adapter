@@ -10,7 +10,7 @@ describe('pg edge cases', () => {
         adapters: {
             edgetests: Adapter
         },
-        connections: {
+        datastores: {
             edgetests: {
                 migrate: 'drop',
                 adapter: 'edgetests',
@@ -22,8 +22,8 @@ describe('pg edge cases', () => {
 
     before(done => {
         waterline = new Waterline();
-        waterline.loadCollection(models.ArrayModel);
-        waterline.loadCollection(models.JsonModel);
+        waterline.registerModel(models.ArrayModel);
+        waterline.registerModel(models.JsonModel);
         waterline.initialize(wlconfig, (err, _orm) => {
             if (err) return done(err);
 

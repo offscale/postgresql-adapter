@@ -24,23 +24,25 @@
   },
   "dependencies": {
     "camelize": "^1.0.0",
-    "knex": "^0.10.0",
-    "knex-postgis": "^0.1.8",
-    "lodash": "^4.6",
-    "pg": "^4.5",
-    "pg-query-stream": "^1.0.0",
+    "knex": "^0.14.1",
+    "knex-postgis": "^0.5.0",
+    "lodash": "^4.17",
+    "pg": "^7.4",
+    "pg-query-stream": "^1.1.1",
     "waterline-errors": "^0.10.1",
-    "waterline-sequel": "^0.5.0"
+    "waterline-sequel": "^0.6.4"
   },
   "devDependencies": {
-    "babel": "^5.6.23",
-    "gulp": "^3.9.0",
-    "gulp-babel": "^5.2.0",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
     "jshint": "^2.9.5",
-    "mocha": "*",
+    "mocha": "^4.0.1",
     "should": "*",
-    "waterline": "^0.11.0",
-    "waterline-adapter-tests": "^0.11.0"
+    "waterline": "^0.13.1-8",
+    "waterline-adapter-tests": "^0.12.1"
   },
   "bundledDependencies": [
     "camelize",
@@ -54,6 +56,9 @@
   "scripts": {
     "test": "make test",
     "prepublish": "gulp"
+  },
+  "babel": {
+    "presets": ["env"]
   },
   "main": "dist/adapter",
   "license": "MIT",

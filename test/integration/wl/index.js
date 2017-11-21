@@ -11,7 +11,7 @@ describe('wl edge cases', () => {
         adapters: {
             edgetests: Adapter
         },
-        connections: {
+        datastores: {
             edgetests: {
                 adapter: 'edgetests',
                 connection: {}
@@ -22,8 +22,8 @@ describe('wl edge cases', () => {
 
     before(done => {
         waterline = new Waterline();
-        waterline.loadCollection(models.NoisyModel);
-        waterline.loadCollection(models.NormalModel);
+        waterline.registerModel(models.NoisyModel);
+        waterline.registerModel(models.NormalModel);
         waterline.initialize(wlconfig, (err, _orm) => {
             if (err) return done(err);
 
@@ -70,7 +70,7 @@ describe('wl edge cases', () => {
                 noise: model.noise,
                 description: model.description
             };
-            wl.connections.edgetests._adapter.create('edgetests', 'noisymodel', modelObject, (err, record) => {
+            wl.datastores.edgetests._adapter.create('edgetests', 'noisymodel', modelObject, (err, record) => {
                 assert.equal(record.identity, 'noisymodel');
                 done()
             })

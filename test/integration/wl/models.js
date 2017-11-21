@@ -10,6 +10,7 @@ module.exports = {
         associationFinders: false,
 
         attributes: {
+            id: { type: 'number', autoIncrement: true},
             name: 'string'
         }
     }),
@@ -27,11 +28,7 @@ module.exports = {
         },
 
         attributes: {
-            id: {
-                type: 'integer',
-                primaryKey: true,
-                autoIncrement: true
-            },
+            id: { type: 'number', autoIncrement: true},
             name: 'string',
             identity: 'string',
             attributes: 'json',
